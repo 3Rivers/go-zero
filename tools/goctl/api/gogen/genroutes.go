@@ -212,6 +212,7 @@ func getRoutes(api *spec.ApiSpec) ([]group, error) {
 func toPrefix(folder string) string {
 	prefix := strings.ReplaceAll(folder, "/", "")
 	prefix = strings.ReplaceAll(prefix, "-", "")
+	prefix = strings.ReplaceAll(prefix, "_", "")
 	_, err := strconv.Atoi(string(prefix[0]))
 	if err != nil {
 		prefix = "v" + prefix
